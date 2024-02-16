@@ -1,5 +1,6 @@
 # Nodemon Server API
-Basic API Data Fetching examples with GET Method, and Error handlings. <br>
+Basic API Data Fetching examples with GET Method, and Error handlings.
+<br><br>
 Packages :
 - Express
 - CORS
