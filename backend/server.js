@@ -1,8 +1,9 @@
 const express = require("express")
 const cors = require("cors")
 const page = require("./page")
-const port = 4000
+const { data } = require("./static-data")
 
+const port = 4000
 const app = express()
 const index = page.getIndexPage()
 
@@ -13,14 +14,6 @@ app.use(cors({
 }))
 app.use(express.urlencoded())
 app.listen(port, () => console.log(`server running at port: ${port}`))
-
-const dataJawir = [
-    { id: 1, name: 'Yanto Kapal', age: 37 },
-    { id: 2, name: 'Surya Danil', age: 25 },
-    { id: 3, name: 'Ilham Asomething', age: 35 },
-    { id: 4, name: 'Umang Lalah', age: 23 },
-    { id: 5, name: 'Napi Sambal Ijo', age: 22 }
-]
 
 // API Endpoints
 app.get("/", (_, res) => {
@@ -34,10 +27,10 @@ app.get("/jawir", (req, res) => {
 
         const { limit, offset = 0 } = req.query
         
-        const limitNum = limit ? parseInt(limit) : dataJawir.length
+        const limitNum = limit ? parseInt(limit) : data.length
         const offsetNum = parseInt(offset)
         
-        const filtered = dataJawir.slice(offsetNum, offsetNum + limitNum)
+        const filtered = data.slice(offsetNum, offsetNum + limitNum)
         
         res.status(200).json(filtered)
 
@@ -55,7 +48,7 @@ app.get('/jawir/:id', (req, res) => {
     try {
 
         const id = parseInt(req.params.id)
-        const data = dataJawir.find(item => item.id === id)
+        const data = data.find(item => item.id === id)
         
         if (data) {
             res.status(200).json(data)
