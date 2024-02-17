@@ -7,8 +7,8 @@ Packages :
 - Nodemon
 
 ## Includes
-- Backend  : Server, Landing Page, Ways to access the API
-- Frontend : API Consuming
+- Backend  : Server, Documentation to access the API, Static Data
+- Frontend : API Consuming Examples
 
 ## Requirements
 You need to install [NodeJS](https://nodejs.org/en/download) to run the application
