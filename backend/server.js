@@ -1,7 +1,7 @@
 const express = require("express")
 const cors = require("cors")
-const page = require("../page")
-const { data } = require("../static-data")
+const page = require("./page")
+const { data } = require("./static-data")
 
 const port = 4000
 const app = express()
