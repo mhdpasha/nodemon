@@ -50,10 +50,10 @@ app.get('/jawir/:id', (req, res) => {
     try {
 
         const id = parseInt(req.params.id)
-        const data = data.find(item => item.id === id)
+        const searched = data.find(item => item.id === id)
         
-        if (data) {
-            res.status(200).json(data)
+        if (searched) {
+            res.status(200).json(searched)
         } else {
             res.status(404).json({ error: 'Data not found' })
         }
