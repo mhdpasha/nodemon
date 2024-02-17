@@ -15,6 +15,8 @@ app.use(cors({
 app.use(express.urlencoded())
 app.listen(port, () => console.log(`server running at port: ${port}`))
 
+
+
 // API Endpoints
 app.get("/", (_, res) => {
     res.status(200).send(index)
@@ -25,12 +27,12 @@ app.get("/jawir", (req, res) => {
 
     try {
 
-        const { limit, offset = 0 } = req.query
+        const { limit, from } = req.query
         
         const limitNum = limit ? parseInt(limit) : data.length
-        const offsetNum = parseInt(offset)
+        const fromNum = from ? parseInt(from) - 1 : 0
         
-        const filtered = data.slice(offsetNum, offsetNum + limitNum)
+        const filtered = data.slice(fromNum, fromNum + limitNum)
         
         res.status(200).json(filtered)
 
