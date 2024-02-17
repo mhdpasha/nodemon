@@ -12,7 +12,7 @@ app.use(cors({
     allowedHeaders: "Content-Type, Authorization"
 }))
 app.use(express.urlencoded())
-app.listen(port, () => { console.log(`server running at port: ${port}`) })
+app.listen(port, () => console.log(`server running at port: ${port}`))
 
 const dataJawir = [
     { id: 1, name: 'Yanto Kapal', age: 37 },
@@ -67,6 +67,6 @@ app.get('/jawir/:id', (req, res) => {
 
         console.error(`Error occured while fetching 'jawir' data by ID: ${err}`)
         res.status(500).json({ err: `Internal server error` })
-        
+
     }
 });
