@@ -17,7 +17,7 @@ app.use(cors({
     methods: "GET, POST",
 }))
 app.use(express.urlencoded({ extended: true }))
-app.listen(port, () => console.log(`\n\n\n\n\n\n\n\n\n\n\n\n\n -- ${colors.white}server running at ${colors.cyan}http://localhost:${port}${colors.reset}`))
+app.listen(port, () => console.log(`\n\n -- ${colors.white}server running at ${colors.cyan}http://localhost:${port}${colors.reset}`))
 
 
 
