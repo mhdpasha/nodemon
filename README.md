@@ -1,13 +1,16 @@
 # Nodemon Server API
-Basic API Data Fetching examples with GET Method, and Error handlings.
+Basic API Data Fetching examples with GET, POST[ongoing] Method, and Error handlings. Currently still vulnerable, use it ONLY at localhost
 <br><br>
 Packages :
 - Express
 - CORS
 - Nodemon
+- MySQL2
+- dotenv
+- express-validator
 
 ## Includes
-- Backend  : Server, Documentation to access the API, Static Data
+- Backend  : Server, Documentation to access the API, Static and Dynamic Data
 - Frontend : API Consuming Examples
 
 ## Requirements
