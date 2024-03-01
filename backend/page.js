@@ -16,20 +16,20 @@ const getIndexPage = () => {
                 <pre>Fetch semua jawir</pre>
 
                 <li><a href="/jawir/3">/jawir/3</a></li>
-                <pre>Fetch jawir by specific Id</pre>
+                <pre>Fetch jawir by specific id</pre>
 
                 <li><a href="/jawir?limit=4">/jawir?limit=4</a></li>
-                <pre>Fetch jawir di-limit 4</pre>
+                <pre>Fetch jawir limit by 4 entities</pre>
 
                 <li><a href="/jawir?from=5">/jawir?from=5</a></li>
-                <pre>Fetch jawir dari id 5 ke atas</pre>
+                <pre>Fetch jawir from id 5 ke atas</pre>
 
                 <br>
 
                 <pre><b>Mixed API call</b></pre>
                 
                 <li><a href="/jawir?limit=5&from=1">/jawir?limit=5&from=1</a></li>
-                <pre>Fetch 5 jawir dari id 1</pre>
+                <pre>Fetch 5 jawir from id 1</pre>
 
             </ul>
         </body>

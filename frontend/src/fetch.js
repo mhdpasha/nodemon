@@ -1,5 +1,5 @@
 const container = document.getElementById('container')
-const endpoint = "http://localhost:4000/jawir"
+const endpoint = `http://127.0.0.1:4000/jawir`
 
 fetch(endpoint)
     .then(res => {
@@ -9,9 +9,34 @@ fetch(endpoint)
         return res.json()
     })
     .then(data => {
-        const listItems = data.map(item => `<li>${item.name}, Umur: ${item.age}</li>`)
-        container.innerHTML = `<ul>${listItems.join('')}</ul>`
+        console.log(data)
+        const tableRows = data.map(item => {
+            return `
+                <tr>
+                    <td>${item.id}</td>
+                    <td>${item.name}</td>
+                    <td>${item.age}</td>
+                </tr>
+            `
+        }).join('')
+        
+        const table = `
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>
+                        <th>Umur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+        `
+        
+        container.innerHTML = table
     })
     .catch(error => {
         container.innerHTML = `<p>Error: ${error.message}</p>`
-    });
+    })
